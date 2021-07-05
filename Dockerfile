@@ -4,10 +4,10 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
 WORKDIR /src
-COPY ["src/AbpDemoForWeixinCloud.Web/AbpDemoForWeixinCloud.Web.csproj", "AbpDemoForWeixinCloud.Web/"]
-RUN dotnet restore "AbpDemoForWeixinCloud.Web/AbpDemoForWeixinCloud.Web.csproj"
-COPY ./src .
-WORKDIR "/src/AbpDemoForWeixinCloud.Web"
+COPY ["src/AbpDemoForWeixinCloud.Web/AbpDemoForWeixinCloud.Web.csproj", "src/AbpDemoForWeixinCloud.Web/"]
+RUN dotnet restore "src/AbpDemoForWeixinCloud.Web/AbpDemoForWeixinCloud.Web.csproj"
+COPY . .
+WORKDIR "/src/src/AbpDemoForWeixinCloud.Web"
 RUN dotnet build "AbpDemoForWeixinCloud.Web.csproj" -c Release -o /app/build
 
 FROM build AS publish
