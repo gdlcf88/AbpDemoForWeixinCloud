@@ -1,0 +1,26 @@
+{
+	// 监听端口
+	"containerPort": 80,
+	// Dockerfile 路径
+	"dockerfilePath": "Dockerfile",
+	// 构建目录
+	"buildDir": "",
+	// 最小实例数
+	"minNum": 0,
+	// 最大实例数
+	"maxNum": 50,
+	// cpu 核数
+	"cpu": 0.25,
+	// 内存大小，单位：G
+	"mem": 0.5,
+	// 扩缩容指标类型
+	"policyType": "cpu",
+	// 扩缩容指标阈值
+	"policyThreshold": 60,
+	// 环境变量
+	"envParams": {},
+	// 日志采集路径
+	"customLogs": "stdout",
+	// 启动检测延迟
+	"initialDelaySeconds": 2
+}
